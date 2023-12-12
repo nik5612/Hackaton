@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Регистрация</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f6f8fa;
+    margin: 0;
+    padding: 20px;
+  }
+  .container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #A9B388;
+    padding: 20px;
+    border: 1px solid #e1e4e8;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  }
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  form > div {
+    margin-bottom: 15px;
+  }
+  label {
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #777;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  select {
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 5px;
+    border: 1px solid #d1d5da;
+    border-radius: 20px;
+    box-sizing: border-box;
+    background-color: #FFFFF3; /* Учитывает padding в ширине элемента */
+   display: inline-block;
+  }
+
+  button {
+    background-color: #F9ECC9;
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 100%;
+  }
+  button:hover {
+    background-color: #34495e;
+    transition: 0.5s
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Регистрация</h2>
+  <form action="{{ url_for('singup') }}" method=post>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" name="email" required>
+    </div>
+    
+    <div>
+      <label for="last_name">Фамилия:</label>
+      <input type="text" name="last_name" required>
+    </div>
+    
+    <div>
+      <label for="first_name">Имя:</label>
+      <input type="text" name="first_name" required>
+    </div>
+
+    <div>
+      <label for="patronymic">Отчество:</label>
+      <input type="text" name="patronymic" required>
+    </div>
+    
+    <div>
+      <label for="company">Компания :</label>
+      <input type="text" name="company" required>
+    </div>
+
+    <div>
+      <label for="password">Пароль:</label>
+      <input type="password" name="password" required>
+    </div>
+
+    <div>
+      <label for="rule">Роль:</label>
+      <select name="rule" required>
+        <option value="customer">Заказчик</option>
+        <option value="supplier">Поставщик</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="tel_number">Номер телефона:</label>
+      <input type="tel" name="tel_number" >
+    </div>
+
+    <button type="submit" value=singup>Зарегистрироваться</button>
+  </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat List</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .chat-list {
+            height: 90vh;
+            overflow-y: auto;
+        }
+        .chat-item {
+            padding: 10px;
+            border-bottom: 1px solid #f2f2f2;
+        }
+        .chat-item:hover {
+            background-color: #f8f8f8;
+        }
+        .active-chat {
+            background-color: #e7f3ff;
+        }
+        .chat-item .name {
+            font-weight: bold;
+        }
+        .chat-item .last-message {
+            color: #888;
+            font-size: 0.9em;
+        }
+      
+      .login-form input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 20px;
+        color: white;
+        background-color: #F9ECC9;
+        cursor: pointer;
+      }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Chat List -->
+            <div class="col-4">
+                <div class="chat-list border-right">
+
+                  
+                  <form method="POST">
+                   <button type="submit" name="action" value="docx_button">Сгенерировать документ</button>
+                    </form>
+
+                  
+                    {% for chat in chats %}
+                    <div class="chat-item{{ ' active-chat' if chat.active }}">
+                        <div class="name">{{ chat.name }}</div>
+                        <div class="last-message">{{ chat.last_message }}</div>
+                    </div>
+                    {% endfor %}
+
+
+                  
+                </div>
+            </div>
+
+            <!-- Chat Content -->
+            <div class="col-8">
+              {% block content %}
+              {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

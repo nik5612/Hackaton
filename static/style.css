@@ -1,0 +1,135 @@
+div {
+  height: 97vh;
+  margin: 2px
+}
+body {
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+}
+
+#element::-webkit-scrollbar {
+  width: 10px;
+}
+
+#element::-webkit-scrollbar-track {
+  -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+  background-color: #f9f9fd;
+}
+
+#element::-webkit-scrollbar-thumb {
+  background-color: #f2bf93;
+  background-image: -webkit-linear-gradient(45deg,rgba(255, 255, 255, .25) 25%,
+                    transparent 25%,
+                    transparent 50%,
+                    rgba(255, 255, 255, .25) 50%,
+                    rgba(255, 255, 255, .25) 75%,
+                    transparent 75%,
+                    transparent);
+}
+
+.chat {
+  display: flex; 
+  flex-direction: row;
+  width: 100%
+  height: 100%
+  background-color: #ffffff;
+  display: flex;
+}
+.govno_left {
+  display: flex; 
+  flex-direction: column;
+  /*border: 2px ridge #000000;*/
+  background-color: #5E7153;
+  height: 100%;
+  width: 25%;
+}
+.govno_right {
+  display: flex; 
+  flex-direction: row;
+  /*border: 2px ridge #000000;*/
+  background-color: #ffffff;
+  height: 100%;
+  width: 75%;
+}
+.user_space {
+  display: flex; 
+  flex-direction: column;
+  /*border: 2px ridge #000000;*/
+  background-color: #fffff3;
+  height: 20%;
+  width: 99%;
+  position: relative;
+  border-radius: 20px;
+}
+.chat_space {
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  /*border: 2px ridge #000000;*/
+  background-color: #5e7153;
+  height: 80%;
+  width: 99%;
+  overflow: auto;
+}
+.message {
+  display: flex; 
+  flex-direction: column;
+  background-color: #a9b388;
+  float: left;
+  /*border: 2px ridge #000000;*/
+  height: 15%;
+  width: 95%;
+  position: relative;
+  border-radius: 10px;
+}
+.dash {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  height: 50%;
+  width: 50%;
+  background-color: #a9b388;
+  position: relative;
+}
+.king_dash {
+   display: flex;
+  width: 100%;
+}
+input[type="submit"] {
+  background-color: #FFBD7F;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: inline-block;
+  height: auto;
+  width: auto;
+}
+input[type="submit"] {
+   display: inline-block;
+    width: calc(15% - 22px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+br {
+  padding: 2px;
+  margin: 2px;
+}
+button {
+  background-color: #FFBD7F;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: inline-block;
+  width: calc(15% - 22px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  height: auto;
+  width: auto;
+}
+/*  
+
+*/

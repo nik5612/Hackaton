@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Вход</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f6f8fa;
+    margin: 0;
+    padding: 20px;
+
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #A9B388;
+    border: 1px solid #e1e4e8;
+    border-radius: 5px;
+  }
+
+  .login-form {
+    background: #A9B388;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 400px;
+  }
+
+  .login-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .login-form p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #5E7153;
+    
+    
+  }
+
+  .login-form input[type="text"],
+  .login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    box-sizing: border-box; /* added for consistency */
+    background-color: #FFFFF3;
+  }
+
+  .login-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    color: black;
+    background-color: #F9ECC9;
+    cursor: pointer;
+  }
+
+  .login-form input[type="submit"]:hover {
+    background-color: #34495e;
+    transition: 0.5s
+  }
+</style>
+</head>
+<body alink= "#5E7153">
+<div class="container">
+  <form class="login-form" action="{{ url_for('login') }}" method=post>
+    <h2>Вход</h2>
+    <input type="text" placeholder="Адрес электронной почты" name="email" required>
+    <input type="password" placeholder="Пароль" name="password" required>
+    <input type="submit" value="Войти">
+    {% if error %}<p class=error><strong>Ошибка:</strong> {{ error }}{% endif %}
+    <p>Нет аккаунта? <a href="{{ url_for('singup') }}">Зарегестрируйтесь</a></p>
+  </form>
+  
+
+</div>
+</body>
+</html>
